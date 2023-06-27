@@ -1,8 +1,8 @@
-THE GRAPH WCFI MARKETPLACE
+<h1>THE GRAPH WCFI MARKETPLACE</h1>
 
-NETWORK: Binance smart chain testnet
+Network: Binance smart chain testnet
 
-<h2>CONTRACT NFT</h2>
+<h2>Contract NFT</h2>
 
 NFT: 0xFfe375DBf4f4dB18c2A391233130Cd5A23aF7CB0
 
@@ -10,7 +10,7 @@ Explorer: <a href="https://testnet.bscscan.com/token/0xffe375dbf4f4db18c2a391233
 
 ----------------------------------------------------
 
-<h2>CONTRACT MARKETPLACE</h2>
+<h2>Contract Marketplace</h2>
 
 MARKETPLACE: 0x0B746d0e77A52cCAfc040bD249e75068B148C211
 
