@@ -11,15 +11,16 @@ import {
   Withdraw as WithdrawEvent
 } from "../generated/Contract/Contract"
 import {
-  Transfer1,
-  Withdraw,
   Token,
   TotalMint
 } from "../generated/schema"
 
 
 export function handleBuyNFTs(event: BuyNFTsEvent): void {
-
+  // let token = Token.load(getHexStringFromEventParams(event.params._tokenId))
+  // token!.price = null;
+  // token!.sender 
+  // token!.save();
 }
 
 export function handleListNFTs(event: ListNFTsEvent): void {
@@ -70,7 +71,9 @@ export function handleTransfer1(event: Transfer1Event): void {
     token.tokenId = event.params.tokenId;
     token.sender = event.params.from;
     token.owner = event.params.to;
+    token.price = null
   }
+  token.price = null
   token.tokenId = event.params.tokenId;
   token.sender = event.params.from;
   token.owner = event.params.to;
@@ -84,23 +87,12 @@ export function handleUnListNFTs(event: UnListNFTsEvent): void {
 }
 
 export function handleUpdatePrice(event: UpdatePriceEvent): void {
-  let token = Token.load(getHexStringFromEventParams(event.params._price));
+  let token = Token.load(getHexStringFromEventParams(event.params._tokenId));
   token!.price = event.params._price;
   token!.save();
 }
 
 export function handleWithdraw(event: WithdrawEvent): void {
-  let entity = new Withdraw(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
-  entity._account = event.params._account
-  entity._amount = event.params._amount
-
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
-  entity.transactionHash = event.transaction.hash
-
-  entity.save()
 }
 
 function getHexStringFromEventParams(tokenId: BigInt): string {
